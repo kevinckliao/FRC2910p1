@@ -1,0 +1,37 @@
+package org.frc2910.robot.subsystems.arm.shoulder;
+
+import com.ctre.phoenix6.signals.NeutralModeValue;
+import edu.wpi.first.math.geometry.Rotation2d;
+import org.frc2910.robot.util.SubsystemDataProcessor;
+import org.littletonrobotics.junction.AutoLog;
+
+public interface ShoulderIO extends SubsystemDataProcessor.IODataRefresher {
+    default void updateInputs(ShoulderIOInputs inputs) {}
+
+    @AutoLog
+    class ShoulderIOInputs {
+        // Angle is relative to horizontal rest position as 0 position
+        public Rotation2d shoulderAngle = Rotation2d.kZero;
+
+        public double shoulderAppliedVolts;
+        public double shoulderSupplyCurrentAmps;
+        public double shoulderStatorCurrentAmps;
+        public double shoulderAngularVelocityRadPerSec;
+        public double shoulderAngularAccelerationRadPerSecSquared;
+
+        public double shoulderOneMotorTemp;
+        public double shoulderTwoMotorTemp;
+        public double shoulderThreeMotorTemp;
+    }
+
+    default void setTargetAngle(Rotation2d target) {}
+
+    default void resetShoulderAngle(Rotation2d angle) {}
+
+    default void setDutyCycle(double dutyCycle) {}
+
+    default void setNeutralMode(NeutralModeValue neutralMode) {}
+
+    @Override
+    default void refreshData() {}
+}
