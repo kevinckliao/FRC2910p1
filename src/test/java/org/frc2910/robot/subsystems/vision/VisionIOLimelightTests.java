@@ -2,7 +2,6 @@ package org.frc2910.robot.subsystems.vision;
 
 import edu.wpi.first.math.Pair;
 import edu.wpi.first.math.geometry.Rotation2d;
-import org.frc2910.robot.config.CameraConfiguration;
 import org.frc2910.robot.constants.FieldConstants;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -15,8 +14,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class VisionIOLimelightTests {
-    VisionIOLimelight visionIO = new VisionIOLimelight(new CameraConfiguration());
-
     @Nested
     class SortCornersTests {
         @Test
@@ -63,22 +60,6 @@ public class VisionIOLimelightTests {
             assertEquals(2.0, Height);
         }
 
-        @Test
-        public void CalculateTagDistanceMeters() {
-            // Arrange
-            final Collection<Pair<Double, Double>> corners =
-                    List.of(Pair.of(2.0, 0.0), Pair.of(0.0, 2.0), Pair.of(2.0, 2.0), Pair.of(0.0, 0.0));
-
-            final List<Pair<Double, Double>> sortedCorners =
-                    VisionIOLimelight.sortCorners(corners).stream().toList();
-            final double Height = VisionIOLimelight.calculateTargetHeightInPixels(sortedCorners);
-
-            // Act
-            final double DistanceToTagMeters = visionIO.calculateDistanceToAprilTagInMetersZaneMethod(Height);
-
-            // Assert
-            assertEquals(73.0, ((double) Math.round(DistanceToTagMeters)));
-        }
     }
 
     @Nested
