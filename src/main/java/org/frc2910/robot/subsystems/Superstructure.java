@@ -156,7 +156,7 @@ public class Superstructure extends SubsystemBase {
 
     private boolean coralEjectFlag = false;
 
-    private boolean alageEjectFlag = false;
+    private boolean algaeEjectFlag = false;
 
     private boolean shouldHoldStraight = true;
 
@@ -591,7 +591,7 @@ public class Superstructure extends SubsystemBase {
     }
 
     private void holdingAlgae() {
-        alageEjectFlag = false;
+        algaeEjectFlag = false;
         hasDriveToPointSetPointBeenSet = false;
         armSubsystem.setWantedState(ArmSubsystem.WantedState.MOVE_TO_POSITION, ArmPoseConstants.HOLD_ALGAE);
 
@@ -1251,7 +1251,7 @@ public class Superstructure extends SubsystemBase {
             armSubsystem.setWantedState(ArmSubsystem.WantedState.MOVE_TO_POSITION, ArmPoseConstants.NET_ALGAE_PREP);
         }
 
-        if (alageEjectFlag) {
+        if (algaeEjectFlag) {
             intakeSubsystem.setWantedState(IntakeSubsystem.WantedState.EJECT_ALGAE);
             ledSubsystem.setWantedAction(LEDSubsystem.WantedState.DISPLAY_SCORE_BARGE);
             swerveSubsystem.setTeleopVelocityCoefficient(0.0);
