@@ -3,25 +3,19 @@ package org.frc2910.robot.autos;
 import choreo.Choreo;
 import choreo.trajectory.SwerveSample;
 import choreo.trajectory.Trajectory;
-import com.ctre.phoenix6.SignalLogger;
 import edu.wpi.first.math.Pair;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.util.Units;
 import edu.wpi.first.wpilibj.DriverStation;
-import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine;
 import edu.wpi.first.wpilibj2.command.*;
 import org.frc2910.robot.RobotContainer;
 import org.frc2910.robot.RobotState;
 import org.frc2910.robot.constants.Constants;
 import org.frc2910.robot.constants.FieldConstants;
 import org.frc2910.robot.subsystems.Superstructure;
-import org.frc2910.robot.subsystems.drive.SwerveSubsystem;
-import org.frc2910.robot.util.SysIdMechanism;
 
 import java.util.Set;
-
-import static edu.wpi.first.wpilibj2.command.Commands.none;
 
 /**
  * A factory for creating autonomous programs for a given {@link Auto}
@@ -59,11 +53,6 @@ class AutoFactory {
 
     Pair<Pose2d, Command> createIdleCommand() {
         return Pair.of(FieldConstants.getFarLeftStartingPose(alliance), IDLE_COMMAND);
-    }
-
-    Command debugAuto(String actionType) {
-        System.out.println("completed action: " + actionType);
-        return none();
     }
 
     Pair<Pose2d, Command> createJKLABAuto() {
@@ -314,88 +303,6 @@ class AutoFactory {
                         setState(Superstructure.WantedSuperState.DEFAULT_STATE)));
     }
 
-    Command createKLABAuto() {
-        var initialPose = FieldConstants.getFarLeftStartingPose();
-        return Commands.sequence(
-                followThenScore(
-                        Constants.ReefConstants.ReefFaces.KL,
-                        Superstructure.WantedSuperState.SCORE_LEFT_L4,
-                        DISTANCE_TO_MOVE_ARM_UP,
-                        Units.feetToMeters(10.0)),
-                new DeferredCommand(
-                        () -> followThenIntake(
-                                getIntakePose(FieldConstants.getMark1()),
-                                Superstructure.WantedSuperState.INTAKE_CORAL_FROM_GROUND,
-                                Units.feetToMeters(4.0)),
-                        Set.of()),
-                followThenScoreWithNonDefaultMaxVelocity(
-                        Constants.ReefConstants.ReefFaces.KL,
-                        Superstructure.WantedSuperState.SCORE_RIGHT_L4,
-                        Units.feetToMeters(10.0)),
-                new DeferredCommand(
-                        () -> followThenIntake(
-                                getIntakePose(FieldConstants.getMark2()),
-                                Superstructure.WantedSuperState.INTAKE_CORAL_FROM_GROUND,
-                                Units.feetToMeters(3.0)),
-                        Set.of()),
-                followThenScoreWithNonDefaultMaxVelocity(
-                        Constants.ReefConstants.ReefFaces.AB,
-                        Superstructure.WantedSuperState.SCORE_LEFT_L4,
-                        Units.feetToMeters(6.0)),
-                new DeferredCommand(
-                        () -> followThenIntake(
-                                getIntakePose(FieldConstants.getMark3()),
-                                Superstructure.WantedSuperState.INTAKE_CORAL_FROM_GROUND,
-                                Units.feetToMeters(3.5)),
-                        Set.of()),
-                followThenScoreWithNonDefaultMaxVelocity(
-                        Constants.ReefConstants.ReefFaces.AB,
-                        Superstructure.WantedSuperState.SCORE_RIGHT_L4,
-                        Units.feetToMeters(10.0)),
-                setState(Superstructure.WantedSuperState.DEFAULT_STATE));
-    }
-
-    Command createDCBAAuto() {
-        var initialPose = FieldConstants.getFarRightStartingPose();
-        return Commands.sequence(
-                followThenScore(
-                        Constants.ReefConstants.ReefFaces.CD,
-                        Superstructure.WantedSuperState.SCORE_RIGHT_L4,
-                        DISTANCE_TO_MOVE_ARM_UP,
-                        10.0),
-                new DeferredCommand(
-                        () -> followThenIntake(
-                                getIntakePose(FieldConstants.getMark3()),
-                                Superstructure.WantedSuperState.INTAKE_CORAL_FROM_GROUND,
-                                Units.feetToMeters(3.5)),
-                        Set.of()),
-                followThenScoreWithNonDefaultMaxVelocity(
-                        Constants.ReefConstants.ReefFaces.CD,
-                        Superstructure.WantedSuperState.SCORE_LEFT_L4,
-                        Units.feetToMeters(6.0)),
-                new DeferredCommand(
-                        () -> followThenIntake(
-                                getIntakePose(FieldConstants.getMark2()),
-                                Superstructure.WantedSuperState.INTAKE_CORAL_FROM_GROUND,
-                                Units.feetToMeters(3.0)),
-                        Set.of()),
-                followThenScoreWithNonDefaultMaxVelocity(
-                        Constants.ReefConstants.ReefFaces.AB,
-                        Superstructure.WantedSuperState.SCORE_RIGHT_L4,
-                        Units.feetToMeters(6.0)),
-                new DeferredCommand(
-                        () -> followThenIntake(
-                                getIntakePose(FieldConstants.getMark1()),
-                                Superstructure.WantedSuperState.INTAKE_CORAL_FROM_GROUND,
-                                Units.feetToMeters(3.5)),
-                        Set.of()),
-                followThenScoreWithNonDefaultMaxVelocity(
-                        Constants.ReefConstants.ReefFaces.AB,
-                        Superstructure.WantedSuperState.SCORE_LEFT_L4,
-                        Units.feetToMeters(10.0)),
-                setState(Superstructure.WantedSuperState.DEFAULT_STATE));
-    }
-
     Pair<Pose2d, Command> createKLAAuto() {
         var initialPose = FieldConstants.getFarLeftStartingPose(alliance);
         return Pair.of(
@@ -518,20 +425,6 @@ class AutoFactory {
                 .andThen(waitForCoralRelease().raceWith(new WaitCommand(1.0)));
     }
 
-    private Command followThenScoreWithUnconstrainedAngularVelocity(
-            Constants.ReefConstants.ReefFaces reefFaces,
-            Superstructure.WantedSuperState scoreState,
-            double distanceFromEndOfPathtoMoveArmUp,
-            double maxVelocity) {
-        var desiredPose = getAutoScoringPose(reefFaces, scoreState);
-        return ((driveToPointWithUnconstrainedMaxVelocity(desiredPose, maxVelocity)
-                        .alongWith(new WaitUntilCommand(() ->
-                                        robotContainer.getSwerveSubsystem().getDistanceFromDriveToPointSetpoint()
-                                                < distanceFromEndOfPathtoMoveArmUp)
-                                .andThen(setState(scoreState)))))
-                .andThen(waitForCoralRelease().raceWith(new WaitCommand(1.0)));
-    }
-
     private Command followThenScore(
             Constants.ReefConstants.ReefFaces reefFaces,
             Superstructure.WantedSuperState scoreState,
@@ -620,15 +513,6 @@ class AutoFactory {
                 .raceWith(waitForCoralPickup());
     }
 
-    private Command followThenIntake(Pose2d intakePose, Superstructure.WantedSuperState intakeState) {
-        return (driveToPoint(intakePose, Units.feetToMeters(10.0)).alongWith(setState(intakeState)))
-                .raceWith(waitForCoralPickup());
-    }
-
-    private Command followThenIntake(Trajectory<SwerveSample> path, Superstructure.WantedSuperState intakeState) {
-        return ((followTrajectory(path)).alongWith(setState(intakeState))).andThen(waitForCoralPickup());
-    }
-
     private Command followAndIntakeFromMark(double velocity, Translation2d markLocation) {
         return new DeferredCommand(
                 () -> driveToPoint(getIntakePose(markLocation), velocity)
@@ -663,33 +547,5 @@ class AutoFactory {
                 : Constants.SuperstructureConstants.ScoringSide.RIGHT;
         return FieldConstants.getDesiredFinalScoringPoseForCoral(
                 id, scoringSide, Constants.SuperstructureConstants.ScoringDirection.BACK);
-    }
-
-    Command createTranslationSysIdCommand() {
-        return createSysIdCommand(SysIdMechanism.SWERVE_TRANSLATION, "Translation");
-    }
-
-    Command createRotationSysIdCommand() {
-        return createSysIdCommand(SysIdMechanism.SWERVE_ROTATION, "Rotation");
-    }
-
-    Command createSteerSysIdCommand() {
-        return createSysIdCommand(SysIdMechanism.SWERVE_STEER, "Steer");
-    }
-
-    private Command createSysIdCommand(final SysIdMechanism mechanism, final String testName) {
-        return Commands.sequence(
-                Commands.runOnce(
-                        () -> robotContainer.getSwerveSubsystem().setWantedState(SwerveSubsystem.WantedState.IDLE)),
-                Commands.runOnce(SignalLogger::start),
-                Commands.runOnce(() -> SignalLogger.writeString("TestName", testName)),
-                robotContainer.getSwerveSubsystem().sysIdQuasistatic(mechanism, SysIdRoutine.Direction.kForward),
-                Commands.waitSeconds(1.0),
-                robotContainer.getSwerveSubsystem().sysIdQuasistatic(mechanism, SysIdRoutine.Direction.kReverse),
-                Commands.waitSeconds(1.0),
-                robotContainer.getSwerveSubsystem().sysIdDynamic(mechanism, SysIdRoutine.Direction.kForward),
-                Commands.waitSeconds(1.0),
-                robotContainer.getSwerveSubsystem().sysIdDynamic(mechanism, SysIdRoutine.Direction.kReverse),
-                Commands.runOnce(SignalLogger::stop));
     }
 }
