@@ -59,7 +59,6 @@ public class VisionIOLimelightTests {
             // Assert
             assertEquals(2.0, Height);
         }
-
     }
 
     @Nested
