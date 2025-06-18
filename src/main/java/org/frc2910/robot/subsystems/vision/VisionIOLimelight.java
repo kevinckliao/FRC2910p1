@@ -158,11 +158,6 @@ public class VisionIOLimelight implements VisionIO {
         return Math.abs((TAG_HEIGHT + sqrtTerm) / (2 * tanOfTheta1));
     }
 
-    double calculateDistanceToAprilTagInMetersZaneMethod(double height) {
-        return (TAG_HEIGHT * (VERTICAL_RESOLUTION_IN_PIXELS / (2.0 * Math.tan(0.85347 / 2.0))))
-                / height; // Distance = IRL Height * focal length / pixel height
-    }
-
     Pose2d calculateRobotPose(final int tagId, double distanceToTagMeters, Rotation2d horizontalAngleToTarget) {
         var tagPose = FieldConstants.getTagPose(tagId).toPose2d();
 

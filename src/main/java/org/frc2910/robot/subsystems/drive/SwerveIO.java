@@ -13,13 +13,6 @@ import org.frc2910.robot.util.SubsystemDataProcessor;
 import org.littletonrobotics.junction.AutoLog;
 
 public interface SwerveIO extends SubsystemDataProcessor.IODataRefresher {
-    enum Location {
-        FRONT_LEFT,
-        FRONT_RIGHT,
-        BACK_LEFT,
-        BACK_RIGHT,
-    }
-
     @AutoLog
     class SwerveIOInputs {
         public Pose2d Pose = new Pose2d();
