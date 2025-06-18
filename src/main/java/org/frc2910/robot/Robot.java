@@ -70,8 +70,6 @@ public class Robot extends LoggedRobot {
                 // Running on a real robot, log to a USB stick ("/U/logs")
                 Logger.addDataReceiver(new WPILOGWriter());
                 Logger.addDataReceiver(new NT4Publisher());
-                //  Threads.setCurrentThreadPriority(true, 8);
-                //                Thread.currentThread().setPriority(Thread.MAX_PRIORITY - 1);
                 break;
 
             case SIM:
