@@ -5,15 +5,8 @@ package org.frc2910.robot.autos;
  */
 public enum Auto {
     IDLE,
-    TEST,
-    TRANSLATION_SYSID,
-    ROTATION_SYSID,
-    STEER_SYSID,
-    STRAIGHT,
     KLA,
     DCB,
-    KLAB,
-    DCBA,
     IKLJ,
     FDCE,
     ABBA,
