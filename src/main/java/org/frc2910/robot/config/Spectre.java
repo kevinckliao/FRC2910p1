@@ -154,10 +154,6 @@ public class Spectre implements RobotConstants {
 
     private final List<CameraConfiguration> cameraConfigurations;
 
-    private final FollowPathConfiguration pathplannerFollowPathConfiguration;
-
-    private final FollowPathConfiguration choreoFollowPathConfiguration;
-
     private final ArmConfiguration armConfiguration;
 
     public Spectre() {
@@ -378,22 +374,6 @@ public class Spectre implements RobotConstants {
                 .withWristkI(0)
                 .withWristkD(0)
                 .withWristkS(0);
-
-        pathplannerFollowPathConfiguration = new FollowPathConfiguration()
-                .withTranslationKp(PATHPLANNER_FOLLOW_PATH_TRANSLATION_KP)
-                .withTranslationKi(PATHPLANNER_FOLLOW_PATH_TRANSLATION_KI)
-                .withTranslationKd(PATHPLANNER_FOLLOW_PATH_ROTATION_KD)
-                .withRotationKp(PATHPLANNER_FOLLOW_PATH_ROTATION_KP)
-                .withRotationKi(PATHPLANNER_FOLLOW_PATH_ROTATION_KI)
-                .withRotationKd(PATHPLANNER_FOLLOW_PATH_ROTATION_KD);
-
-        choreoFollowPathConfiguration = new FollowPathConfiguration()
-                .withTranslationKp(CHOREO_FOLLOW_PATH_TRANSLATION_KP)
-                .withTranslationKi(CHOREO_FOLLOW_PATH_TRANSLATION_KI)
-                .withTranslationKd(CHOREO_FOLLOW_PATH_ROTATION_KD)
-                .withRotationKp(CHOREO_FOLLOW_PATH_ROTATION_KP)
-                .withRotationKi(CHOREO_FOLLOW_PATH_ROTATION_KI)
-                .withRotationKd(CHOREO_FOLLOW_PATH_ROTATION_KD);
     }
 
     @Override
@@ -415,16 +395,6 @@ public class Spectre implements RobotConstants {
     @Override
     public List<CameraConfiguration> getCameraConfigurations() {
         return cameraConfigurations;
-    }
-
-    @Override
-    public FollowPathConfiguration getChoreoPathConfiguration() {
-        return choreoFollowPathConfiguration;
-    }
-
-    @Override
-    public FollowPathConfiguration getPathPlannerPathConfiguration() {
-        return pathplannerFollowPathConfiguration;
     }
 
     @Override

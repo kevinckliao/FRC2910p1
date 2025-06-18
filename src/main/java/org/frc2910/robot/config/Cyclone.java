@@ -97,8 +97,6 @@ public class Cyclone implements RobotConstants {
 
     private final CameraConfiguration limelightConfiguration;
 
-    private final FollowPathConfiguration followPathConfiguration;
-
     private final ArmConfiguration armConfiguration;
 
     public Cyclone() {
@@ -252,14 +250,6 @@ public class Cyclone implements RobotConstants {
                 .withHeightOffset(Units.inchesToMeters(8.5))
                 .withMountingPitch(Units.degreesToRadians(26.79));
 
-        followPathConfiguration = new FollowPathConfiguration()
-                .withTranslationKp(FOLLOW_PATH_TRANSLATION_KP)
-                .withTranslationKi(FOLLOW_PATH_TRANSLATION_KI)
-                .withTranslationKd(FOLLOW_PATH_TRANSLATION_KD)
-                .withRotationKp(FOLLOW_PATH_ROTATION_KP)
-                .withRotationKi(FOLLOW_PATH_ROTATION_KI)
-                .withRotationKd(FOLLOW_PATH_ROTATION_KD);
-
         armConfiguration = new ArmConfiguration();
     }
 
@@ -282,15 +272,6 @@ public class Cyclone implements RobotConstants {
     @Override
     public List<CameraConfiguration> getCameraConfigurations() {
         return List.of(limelightConfiguration);
-    }
-
-    public FollowPathConfiguration getChoreoPathConfiguration() {
-        return followPathConfiguration;
-    }
-
-    @Override
-    public FollowPathConfiguration getPathPlannerPathConfiguration() {
-        return followPathConfiguration;
     }
 
     @Override

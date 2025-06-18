@@ -17,10 +17,6 @@ public interface RobotConstants {
 
     List<CameraConfiguration> getCameraConfigurations();
 
-    FollowPathConfiguration getChoreoPathConfiguration();
-
-    FollowPathConfiguration getPathPlannerPathConfiguration();
-
     ArmConfiguration getArmConfiguration();
 
     static RobotConstants getRobotConstants(RobotIdentity robot) {
