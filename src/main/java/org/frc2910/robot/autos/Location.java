@@ -1,7 +1,7 @@
 package org.frc2910.robot.autos;
 
 /**
-Used for Choreo path loading.
+ * Used for Choreo path loading.
  */
 public enum Location {
     FAR_LEFT_STARTING,
