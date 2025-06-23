@@ -11,8 +11,6 @@ public class OperatorDashboard {
 
     private SendableChooser<Constants.SuperstructureConstants.AutomationLevel> automationLevelSendableChooser =
             new SendableChooser<>();
-    private Constants.SuperstructureConstants.AutomationLevel automationLevel =
-            Constants.SuperstructureConstants.AutomationLevel.AUTO_RELEASE;
 
     public OperatorDashboard() {
         dashboard = Shuffleboard.getTab(Constants.operatorDashboardName);

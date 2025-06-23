@@ -86,7 +86,7 @@ public class SwerveSubsystem extends SubsystemBase {
 
     private Pose2d desiredPoseForDriveToPoint = new Pose2d();
 
-    SwerveIOInputsAutoLogged swerveInputs = new SwerveIOInputsAutoLogged();
+    final SwerveIOInputsAutoLogged swerveInputs = new SwerveIOInputsAutoLogged();
     ModuleIOInputsAutoLogged frontLeftInputs = new ModuleIOInputsAutoLogged();
     ModuleIOInputsAutoLogged frontRightInputs = new ModuleIOInputsAutoLogged();
     ModuleIOInputsAutoLogged backLeftInputs = new ModuleIOInputsAutoLogged();
@@ -244,6 +244,7 @@ public class SwerveSubsystem extends SubsystemBase {
 
     private void applyStates() {
         switch (systemState) {
+            default:
             case SYS_ID:
                 break;
             case TELEOP_DRIVE:
@@ -464,7 +465,7 @@ public class SwerveSubsystem extends SubsystemBase {
 
     public boolean isAtEndOfChoreoTrajectoryOrDriveToPoint() {
         if (desiredChoreoTrajectory != null) {
-            return MathUtil.isNear(
+            return (MathUtil.isNear(
                                     desiredChoreoTrajectory
                                             .getFinalPose(false)
                                             .get()
@@ -477,7 +478,7 @@ public class SwerveSubsystem extends SubsystemBase {
                                             .get()
                                             .getY(),
                                     swerveInputs.Pose.getY(),
-                                    TRANSLATION_ERROR_MARGIN_FOR_RELEASING_PIECE_METERS)
+                                    TRANSLATION_ERROR_MARGIN_FOR_RELEASING_PIECE_METERS))
                     || isAtDriveToPointSetpoint();
         } else {
             return isAtDriveToPointSetpoint();

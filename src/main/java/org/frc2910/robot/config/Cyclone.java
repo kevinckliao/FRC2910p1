@@ -82,12 +82,6 @@ public class Cyclone implements RobotConstants {
     private static final int GYRO_MOUNTING_ANGLE = -90;
     private static final double GYRO_ERROR = 0.28;
 
-    private static final double FOLLOW_PATH_TRANSLATION_KP = 5.0; // used to be 5.0
-    private static final double FOLLOW_PATH_TRANSLATION_KI = 0.0;
-    private static final double FOLLOW_PATH_TRANSLATION_KD = 0.0;
-    private static final double FOLLOW_PATH_ROTATION_KP = 8.0;
-    private static final double FOLLOW_PATH_ROTATION_KI = 0.0;
-    private static final double FOLLOW_PATH_ROTATION_KD = 0.0;
     // Robot configuration
     private final PortConfiguration portConfiguration;
     private final SwerveDrivetrainConstants swerveDrivetrainConstants;

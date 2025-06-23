@@ -5,8 +5,6 @@ import edu.wpi.first.math.util.Units;
 import org.frc2910.robot.util.ArmPosition;
 
 public final class ArmPoseConstants {
-    private static final double MAX_EXTENSION_LENGTH = Units.inchesToMeters(39.875);
-
     public static final ArmPosition ZEROED = new ArmPosition(0.0, Rotation2d.kZero, Rotation2d.kZero);
     public static final ArmPosition STOWED =
             new ArmPosition(0.0, Rotation2d.fromDegrees(0.0), Rotation2d.fromDegrees(125.0));

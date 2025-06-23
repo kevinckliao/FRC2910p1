@@ -197,12 +197,12 @@ public final class Constants {
                 Units.Meter.convertFrom(0.25 * 16.0 / Math.PI, Units.Inch);
         public static final double EXTENSION_CASCADE_COEFFICIENT = 2.0;
         public static final double EXTENSION_POSITION_COEFFICIENT =
-                (Math.PI * EXTENSION_PULLEY_DIAMETER) / (EXTENSION_GEAR_RATIO) * EXTENSION_CASCADE_COEFFICIENT;
+                Math.PI * EXTENSION_PULLEY_DIAMETER / EXTENSION_GEAR_RATIO * EXTENSION_CASCADE_COEFFICIENT;
 
         public static final double SHOULDER_EXTENSION_COUPLING_RATIO = (32.0 / 16.0) * (40.0 / 26.0) * (50.0 / 20.0);
 
         public static final double SHOULDER_GEAR_RATIO = (60.0 / 12.0) * (60.0 / 16.0) * (58.0 / 9.0);
-        public static final double SHOULDER_POSITION_COEFFICIENT = (2 * Math.PI) / (SHOULDER_GEAR_RATIO);
+        public static final double SHOULDER_POSITION_COEFFICIENT = 2 * Math.PI / SHOULDER_GEAR_RATIO;
 
         public static final double SHOULDER_ACCELERATION = Units.Radians.convertFrom(600, Units.Degree);
         public static final double SHOULDER_VELOCITY = Units.Radian.convertFrom(1000, Units.Degree);
@@ -227,7 +227,7 @@ public final class Constants {
         public static final double SHOULDER_VELOCITY_CONSTRAINT = SHOULDER_VELOCITY / SHOULDER_POSITION_COEFFICIENT;
 
         public static final double WRIST_GEAR_RATIO = (50.0 / 9.0) * (38.0 / 12.0) * (38.0 / 12.0);
-        public static final double WRIST_POSITION_COEFFICIENT = (2 * Math.PI) / (WRIST_GEAR_RATIO);
+        public static final double WRIST_POSITION_COEFFICIENT = 2 * Math.PI / WRIST_GEAR_RATIO;
 
         public static final double EXTENSION_ZEROING_DUTY_CYCLE = -0.07;
         public static final double SHOULDER_ZEROING_DUTY_CYCLE = -0.05;
@@ -265,7 +265,7 @@ public final class Constants {
         public static final double CLIMBER_DUTY_CYCLE_FOR_ZEROING = -0.07;
 
         public static final double CLIMBER_POSITION_COEFFICIENT =
-                (Math.PI * CLIMBER_PULLEY_DIAMETER) / (CLIMBER_GEAR_RATIO);
+                Math.PI * CLIMBER_PULLEY_DIAMETER / CLIMBER_GEAR_RATIO;
 
         public static final double CLIMBER_ACCELERATION_CONSTRAINT =
                 CLIMBER_ACCELERATION / ClimberConstants.CLIMBER_POSITION_COEFFICIENT;

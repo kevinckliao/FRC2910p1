@@ -46,7 +46,6 @@ public class Superstructure extends SubsystemBase {
 
     private final CommandXboxController controller = new CommandXboxController(0);
 
-    private static final double SLOW_TELEOP_TRANSLATION_COEFFICIENT = 0.3;
     private static final double REGULAR_TELEOP_TRANSLATION_COEFFICIENT = 1.0;
 
     private Constants.SuperstructureConstants.AutomationLevel automationLevel =
@@ -261,6 +260,9 @@ public class Superstructure extends SubsystemBase {
     private CurrentSuperState handStateTransitions() {
         previousSuperState = currentSuperState;
         switch (wantedSuperState) {
+            default:
+                currentSuperState = CurrentSuperState.STOPPED;
+                break;
             case HOME:
                 currentSuperState = CurrentSuperState.HOME;
                 break;

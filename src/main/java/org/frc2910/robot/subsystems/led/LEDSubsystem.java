@@ -1,7 +1,6 @@
 package org.frc2910.robot.subsystems.led;
 
 import com.ctre.phoenix.led.*;
-import edu.wpi.first.wpilibj.util.Color;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import org.frc2910.robot.constants.FieldConstants;
 import org.littletonrobotics.junction.Logger;
@@ -17,9 +16,6 @@ public class LEDSubsystem extends SubsystemBase {
     }
 
     private static final int NUMBER_OF_LEDS = 58;
-    private static final Color L2 = new Color(255, 194, 251);
-    private static final Color L3 = new Color(255, 131, 246);
-    private static final Color L4 = new Color(255, 0, 237);
 
     public enum WantedState {
         DISPLAY_OFF,
@@ -91,7 +87,6 @@ public class LEDSubsystem extends SubsystemBase {
         DISPLAYING_CONTROLLER_ACTIVE
     }
 
-    private SystemState systemState;
     private WantedState wantedAction = WantedState.DISPLAY_OFF;
     private final LEDIO ledIO;
 
@@ -260,13 +255,9 @@ public class LEDSubsystem extends SubsystemBase {
                 ledIO.setAnimation(getAnimation(AnimationType.RAINBOW, 2, 9, 10, 0.95));
                 break;
             default:
-                System.out.println("Fell through on LED commands: " + systemState);
+                System.out.println("Fell through on LED commands");
                 break;
         }
-    }
-
-    public WantedState getWantedAction() {
-        return wantedAction;
     }
 
     private static Animation getAnimation(AnimationType type, int red, int green, int blue, double speed) {
@@ -278,44 +269,6 @@ public class LEDSubsystem extends SubsystemBase {
                     red, green, blue, 0, speed, NUMBER_OF_LEDS, LarsonAnimation.BounceMode.Back, 5);
             case TWINKLE -> new TwinkleAnimation(
                     red, green, blue, 0, speed, NUMBER_OF_LEDS, TwinkleAnimation.TwinklePercent.Percent88);
-            case RAINBOW -> new RainbowAnimation(1, speed, NUMBER_OF_LEDS, false, 0);
-        };
-    }
-
-    private static Animation getAnimation(AnimationType type, Color color, double speed) {
-        return switch (type) {
-            default -> new StrobeAnimation(
-                    (int) (color.red * 255),
-                    (int) (color.blue * 255),
-                    (int) (color.green * 255),
-                    0,
-                    speed,
-                    NUMBER_OF_LEDS);
-            case FADE -> new SingleFadeAnimation(
-                    (int) (color.red * 255),
-                    (int) (color.blue * 255),
-                    (int) (color.green * 255),
-                    0,
-                    speed,
-                    NUMBER_OF_LEDS);
-            case FIRE -> new FireAnimation(1.0, 0.3, NUMBER_OF_LEDS, 0.3, 0.3);
-            case LARSON -> new LarsonAnimation(
-                    (int) (color.red * 255),
-                    (int) (color.blue * 255),
-                    (int) (color.green * 255),
-                    0,
-                    speed,
-                    NUMBER_OF_LEDS,
-                    LarsonAnimation.BounceMode.Back,
-                    5);
-            case TWINKLE -> new TwinkleAnimation(
-                    (int) (color.red * 255),
-                    (int) (color.blue * 255),
-                    (int) (color.green * 255),
-                    0,
-                    speed,
-                    NUMBER_OF_LEDS,
-                    TwinkleAnimation.TwinklePercent.Percent88);
             case RAINBOW -> new RainbowAnimation(1, speed, NUMBER_OF_LEDS, false, 0);
         };
     }

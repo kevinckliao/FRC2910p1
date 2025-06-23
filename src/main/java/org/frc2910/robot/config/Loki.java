@@ -99,16 +99,6 @@ public class Loki implements RobotConstants {
     private static final int GYRO_MOUNTING_ANGLE = 90;
     private static final double GYRO_ERROR = 1.6;
 
-    // ==================================================================================
-    // Path-following constants
-    // ==================================================================================
-    private static final double FOLLOW_PATH_TRANSLATION_KP = 5.0;
-    private static final double FOLLOW_PATH_TRANSLATION_KI = 0.0;
-    private static final double FOLLOW_PATH_TRANSLATION_KD = 0.0;
-    private static final double FOLLOW_PATH_ROTATION_KP = 5.0;
-    private static final double FOLLOW_PATH_ROTATION_KI = 0.0;
-    private static final double FOLLOW_PATH_ROTATION_KD = 0.0;
-
     // Robot configuration
     private final PortConfiguration portConfiguration;
     private final SwerveDrivetrainConstants swerveDrivetrainConstants;

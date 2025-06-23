@@ -127,24 +127,6 @@ public class Spectre implements RobotConstants {
     private static final int GYRO_MOUNTING_ANGLE = 0;
     private static final double GYRO_ERROR = -0.34;
 
-    /**
-     * Path-following constants
-     */
-    private static final double PATHPLANNER_FOLLOW_PATH_TRANSLATION_KP = 0.0;
-
-    private static final double PATHPLANNER_FOLLOW_PATH_TRANSLATION_KI = 0.0;
-    private static final double PATHPLANNER_FOLLOW_PATH_TRANSLATION_KD = 0.0;
-    private static final double PATHPLANNER_FOLLOW_PATH_ROTATION_KP = 0.0;
-    private static final double PATHPLANNER_FOLLOW_PATH_ROTATION_KI = 0.0;
-    private static final double PATHPLANNER_FOLLOW_PATH_ROTATION_KD = 0.0;
-
-    private static final double CHOREO_FOLLOW_PATH_TRANSLATION_KP = 0.0;
-    private static final double CHOREO_FOLLOW_PATH_TRANSLATION_KI = 0.0;
-    private static final double CHOREO_FOLLOW_PATH_TRANSLATION_KD = 0.0;
-    private static final double CHOREO_FOLLOW_PATH_ROTATION_KP = 0.0;
-    private static final double CHOREO_FOLLOW_PATH_ROTATION_KI = 0.0;
-    private static final double CHOREO_FOLLOW_PATH_ROTATION_KD = 0.0;
-
     // Robot configuration
     private final PortConfiguration portConfiguration;
 
