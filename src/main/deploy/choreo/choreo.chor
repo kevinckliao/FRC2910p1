@@ -1,0 +1,983 @@
+{
+ "name":"choreo",
+ "version":1,
+ "type":"Swerve",
+ "variables":{
+  "expressions":{
+   "FIELD_LENGTH":{
+    "dimension":"Length",
+    "var":{
+     "exp":"17.548249 m",
+     "val":17.548249
+    }
+   },
+   "FIELD_WIDTH":{
+    "dimension":"Length",
+    "var":{
+     "exp":"8.0518 m",
+     "val":8.0518
+    }
+   },
+   "MARK_INTAKE_VELOCITY":{
+    "dimension":"LinVel",
+    "var":{
+     "exp":"1 m / s",
+     "val":1.0
+    }
+   }
+  },
+  "poses":{
+   "b_A_CORAL":{
+    "x":{
+     "exp":"3.099 m",
+     "val":3.099
+    },
+    "y":{
+     "exp":"4.191 m",
+     "val":4.191
+    },
+    "heading":{
+     "exp":"3.142 rad",
+     "val":3.142
+    }
+   },
+   "b_B_CORAL":{
+    "x":{
+     "exp":"3.099 m",
+     "val":3.099
+    },
+    "y":{
+     "exp":"3.861 m",
+     "val":3.861
+    },
+    "heading":{
+     "exp":"3.142 rad",
+     "val":3.142
+    }
+   },
+   "b_C_CORAL":{
+    "x":{
+     "exp":"3.652 m",
+     "val":3.652
+    },
+    "y":{
+     "exp":"2.905 m",
+     "val":2.905
+    },
+    "heading":{
+     "exp":"-2.094 rad",
+     "val":-2.094
+    }
+   },
+   "b_D_CORAL":{
+    "x":{
+     "exp":"3.937 m",
+     "val":3.937
+    },
+    "y":{
+     "exp":"2.74 m",
+     "val":2.74
+    },
+    "heading":{
+     "exp":"-2.094 rad",
+     "val":-2.094
+    }
+   },
+   "b_E_CORAL":{
+    "x":{
+     "exp":"5.041 m",
+     "val":5.041
+    },
+    "y":{
+     "exp":"2.74 m",
+     "val":2.74
+    },
+    "heading":{
+     "exp":"-1.047 rad",
+     "val":-1.047
+    }
+   },
+   "b_FAR_LEFT_STARTING":{
+    "x":{
+     "exp":"7.2 m",
+     "val":7.2
+    },
+    "y":{
+     "exp":"FIELD_WIDTH",
+     "val":8.0518
+    },
+    "heading":{
+     "exp":"pi rad",
+     "val":3.141592653589793
+    }
+   },
+   "b_FAR_RIGHT_STARTING":{
+    "x":{
+     "exp":"7.15 m",
+     "val":7.15
+    },
+    "y":{
+     "exp":"0 m",
+     "val":0.0
+    },
+    "heading":{
+     "exp":"pi rad",
+     "val":3.141592653589793
+    }
+   },
+   "b_F_CORAL":{
+    "x":{
+     "exp":"5.327 m",
+     "val":5.327
+    },
+    "y":{
+     "exp":"2.905 m",
+     "val":2.905
+    },
+    "heading":{
+     "exp":"-1.047 rad",
+     "val":-1.047
+    }
+   },
+   "b_G_CORAL":{
+    "x":{
+     "exp":"5.88 m",
+     "val":5.88
+    },
+    "y":{
+     "exp":"3.861 m",
+     "val":3.861
+    },
+    "heading":{
+     "exp":"0 rad",
+     "val":0.0
+    }
+   },
+   "b_H_CORAL":{
+    "x":{
+     "exp":"5.88 m",
+     "val":5.88
+    },
+    "y":{
+     "exp":"4.191 m",
+     "val":4.191
+    },
+    "heading":{
+     "exp":"0 rad",
+     "val":0.0
+    }
+   },
+   "b_I_CORAL":{
+    "x":{
+     "exp":"5.327 m",
+     "val":5.327
+    },
+    "y":{
+     "exp":"5.147 m",
+     "val":5.147
+    },
+    "heading":{
+     "exp":"1.047 rad",
+     "val":1.047
+    }
+   },
+   "b_J_CORAL":{
+    "x":{
+     "exp":"5.041 m",
+     "val":5.041
+    },
+    "y":{
+     "exp":"5.312 m",
+     "val":5.312
+    },
+    "heading":{
+     "exp":"-2.094 rad",
+     "val":-2.094
+    }
+   },
+   "b_K_CORAL":{
+    "x":{
+     "exp":"3.937 m",
+     "val":3.937
+    },
+    "y":{
+     "exp":"5.312 m",
+     "val":5.312
+    },
+    "heading":{
+     "exp":"2.094 rad",
+     "val":2.094
+    }
+   },
+   "b_LEFT_STARTING":{
+    "x":{
+     "exp":"7.215569019317627 m",
+     "val":7.215569019317627
+    },
+    "y":{
+     "exp":"6.137656 m",
+     "val":6.137656
+    },
+    "heading":{
+     "exp":"pi rad",
+     "val":3.141592653589793
+    }
+   },
+   "b_LEFT_STATION":{
+    "x":{
+     "exp":"1.3783825635910034 m",
+     "val":1.3783825635910034
+    },
+    "y":{
+     "exp":"6.904361248016357 m",
+     "val":6.904361248016357
+    },
+    "heading":{
+     "exp":"2.217843420668855 rad",
+     "val":2.217843420668855
+    }
+   },
+   "b_L_CORAL":{
+    "x":{
+     "exp":"3.652 m",
+     "val":3.652
+    },
+    "y":{
+     "exp":"5.147 m",
+     "val":5.147
+    },
+    "heading":{
+     "exp":"2.094 rad",
+     "val":2.094
+    }
+   },
+   "b_MARK_1_TO_A_CORAL":{
+    "x":{
+     "exp":"1 m",
+     "val":1.0
+    },
+    "y":{
+     "exp":"5.9 m",
+     "val":5.9
+    },
+    "heading":{
+     "exp":"pi rad",
+     "val":3.141592653589793
+    }
+   },
+   "b_MARK_1_TO_A_CORAL_ALIGNMENT":{
+    "x":{
+     "exp":"b_MARK_1_TO_A_CORAL.x() + 1 m",
+     "val":2.0
+    },
+    "y":{
+     "exp":"b_MARK_1_TO_A_CORAL.y",
+     "val":5.9
+    },
+    "heading":{
+     "exp":"b_MARK_1_TO_A_CORAL.heading",
+     "val":3.141592653589793
+    }
+   },
+   "b_MARK_1_TO_L_CORAL":{
+    "x":{
+     "exp":"0.95 m",
+     "val":0.95
+    },
+    "y":{
+     "exp":"6.0132856369018555 m",
+     "val":6.0132856369018555
+    },
+    "heading":{
+     "exp":"b_L_CORAL.heading()",
+     "val":2.094
+    }
+   },
+   "b_MARK_1_TO_L_CORAL_ALIGNMENT":{
+    "x":{
+     "exp":"1.55 m",
+     "val":1.55
+    },
+    "y":{
+     "exp":"4.953400135040283 m",
+     "val":4.953400135040283
+    },
+    "heading":{
+     "exp":"b_L_CORAL.heading()",
+     "val":2.094
+    }
+   },
+   "b_MARK_2_TO_A_CORAL":{
+    "x":{
+     "exp":"0.95 m",
+     "val":0.95
+    },
+    "y":{
+     "exp":"4.0125732421875 m",
+     "val":4.0125732421875
+    },
+    "heading":{
+     "exp":"b_A_CORAL.heading()",
+     "val":3.142
+    }
+   },
+   "b_MARK_2_TO_A_CORAL_ALIGNMENT":{
+    "x":{
+     "exp":"1.951074442863 m",
+     "val":1.951074442863
+    },
+    "y":{
+     "exp":"b_MARK_2_TO_A_CORAL.y()",
+     "val":4.0125732421875
+    },
+    "heading":{
+     "exp":"b_B_CORAL.heading()",
+     "val":3.142
+    }
+   },
+   "b_MARK_2_TO_C_CORAL":{
+    "x":{
+     "exp":"1.0330489873886108 m",
+     "val":1.0330489873886108
+    },
+    "y":{
+     "exp":"4.05 m",
+     "val":4.05
+    },
+    "heading":{
+     "exp":"180 deg",
+     "val":3.141592653589793
+    }
+   },
+   "b_MARK_2_TO_C_CORAL_ALIGNMENT":{
+    "x":{
+     "exp":"1.9944915771484375 m",
+     "val":1.9944915771484375
+    },
+    "y":{
+     "exp":"2.9930050373077393 m",
+     "val":2.9930050373077393
+    },
+    "heading":{
+     "exp":"b_C_CORAL.heading()",
+     "val":-2.094
+    }
+   },
+   "b_MARK_2_TO_L_CORAL":{
+    "x":{
+     "exp":"0.95 m",
+     "val":0.95
+    },
+    "y":{
+     "exp":"4 m",
+     "val":4.0
+    },
+    "heading":{
+     "exp":"b_A_CORAL.heading",
+     "val":3.142
+    }
+   },
+   "b_MARK_2_TO_L_CORAL_ALIGNMENT":{
+    "x":{
+     "exp":"2.3005642890930176 m",
+     "val":2.3005642890930176
+    },
+    "y":{
+     "exp":"5.120209693908691 m",
+     "val":5.120209693908691
+    },
+    "heading":{
+     "exp":"b_L_CORAL.heading",
+     "val":2.094
+    }
+   },
+   "b_MARK_3_TO_B_CORAL":{
+    "x":{
+     "exp":"0.95 m",
+     "val":0.95
+    },
+    "y":{
+     "exp":"2.1 m",
+     "val":2.1
+    },
+    "heading":{
+     "exp":"pi rad",
+     "val":3.141592653589793
+    }
+   },
+   "b_MARK_3_TO_B_CORAL_ALIGNMENT":{
+    "x":{
+     "exp":"2.011264801 m",
+     "val":2.011264801
+    },
+    "y":{
+     "exp":"b_MARK_3_TO_B_CORAL.y()",
+     "val":2.1
+    },
+    "heading":{
+     "exp":"b_B_CORAL.heading()",
+     "val":3.142
+    }
+   },
+   "b_MIDDLE_STARTING":{
+    "x":{
+     "exp":"7.585640907287598 m",
+     "val":7.585640907287598
+    },
+    "y":{
+     "exp":"4.080836296081543 m",
+     "val":4.080836296081543
+    },
+    "heading":{
+     "exp":"0 rad",
+     "val":0.0
+    }
+   },
+   "b_RIGHT_STARTING":{
+    "x":{
+     "exp":"7.184 m",
+     "val":7.184
+    },
+    "y":{
+     "exp":"1.889506 m",
+     "val":1.889506
+    },
+    "heading":{
+     "exp":"pi rad",
+     "val":3.141592653589793
+    }
+   },
+   "b_RIGHT_STATION":{
+    "x":{
+     "exp":"1.4247808456420898 m",
+     "val":1.4247808456420898
+    },
+    "y":{
+     "exp":"1.1742051839828491 m",
+     "val":1.1742051839828491
+    },
+    "heading":{
+     "exp":"-2.217843420668855 rad",
+     "val":-2.217843420668855
+    }
+   },
+   "r_A_CORAL":{
+    "x":{
+     "exp":"14.449 m",
+     "val":14.449
+    },
+    "y":{
+     "exp":"3.861 m",
+     "val":3.861
+    },
+    "heading":{
+     "exp":"0 rad",
+     "val":0.0
+    }
+   },
+   "r_B_CORAL":{
+    "x":{
+     "exp":"14.449 m",
+     "val":14.449
+    },
+    "y":{
+     "exp":"4.191 m",
+     "val":4.191
+    },
+    "heading":{
+     "exp":"0 rad",
+     "val":0.0
+    }
+   },
+   "r_C_CORAL":{
+    "x":{
+     "exp":"13.897 m",
+     "val":13.897
+    },
+    "y":{
+     "exp":"5.147 m",
+     "val":5.147
+    },
+    "heading":{
+     "exp":"1.05 rad",
+     "val":1.05
+    }
+   },
+   "r_D_CORAL":{
+    "x":{
+     "exp":"13.611 m",
+     "val":13.611
+    },
+    "y":{
+     "exp":"5.312 m",
+     "val":5.312
+    },
+    "heading":{
+     "exp":"1.047 rad",
+     "val":1.047
+    }
+   },
+   "r_E_CORAL":{
+    "x":{
+     "exp":"12.507 m",
+     "val":12.507
+    },
+    "y":{
+     "exp":"5.312 m",
+     "val":5.312
+    },
+    "heading":{
+     "exp":"2.094 rad",
+     "val":2.094
+    }
+   },
+   "r_FAR_LEFT_STARTING":{
+    "x":{
+     "exp":"FIELD_LENGTH - b_FAR_LEFT_STARTING.x",
+     "val":10.348249
+    },
+    "y":{
+     "exp":"FIELD_WIDTH - b_FAR_LEFT_STARTING.y",
+     "val":0.0
+    },
+    "heading":{
+     "exp":"b_FAR_LEFT_STARTING.heading + pi rad",
+     "val":6.283185307179586
+    }
+   },
+   "r_FAR_RIGHT_STARTING":{
+    "x":{
+     "exp":"FIELD_LENGTH - b_FAR_RIGHT_STARTING.x",
+     "val":10.398248999999998
+    },
+    "y":{
+     "exp":"FIELD_WIDTH - b_FAR_RIGHT_STARTING.y",
+     "val":8.0518
+    },
+    "heading":{
+     "exp":"b_FAR_RIGHT_STARTING.heading + pi rad",
+     "val":6.283185307179586
+    }
+   },
+   "r_F_CORAL":{
+    "x":{
+     "exp":"12.221 m",
+     "val":12.221
+    },
+    "y":{
+     "exp":"5.147 m",
+     "val":5.147
+    },
+    "heading":{
+     "exp":"2.094 rad",
+     "val":2.094
+    }
+   },
+   "r_G_CORAL":{
+    "x":{
+     "exp":"11.669 m",
+     "val":11.669
+    },
+    "y":{
+     "exp":"4.191 m",
+     "val":4.191
+    },
+    "heading":{
+     "exp":"3.142 rad",
+     "val":3.142
+    }
+   },
+   "r_H_CORAL":{
+    "x":{
+     "exp":"11.669 m",
+     "val":11.669
+    },
+    "y":{
+     "exp":"3.861 m",
+     "val":3.861
+    },
+    "heading":{
+     "exp":"3.142 rad",
+     "val":3.142
+    }
+   },
+   "r_I_CORAL":{
+    "x":{
+     "exp":"12.221 m",
+     "val":12.221
+    },
+    "y":{
+     "exp":"2.905 m",
+     "val":2.905
+    },
+    "heading":{
+     "exp":"-2.094 rad",
+     "val":-2.094
+    }
+   },
+   "r_J_CORAL":{
+    "x":{
+     "exp":"12.507 m",
+     "val":12.507
+    },
+    "y":{
+     "exp":"2.74 m",
+     "val":2.74
+    },
+    "heading":{
+     "exp":"-2.09 rad",
+     "val":-2.09
+    }
+   },
+   "r_K_CORAL":{
+    "x":{
+     "exp":"13.611 m",
+     "val":13.611
+    },
+    "y":{
+     "exp":"2.74 m",
+     "val":2.74
+    },
+    "heading":{
+     "exp":"-1.047 rad",
+     "val":-1.047
+    }
+   },
+   "r_LEFT_STARTING":{
+    "x":{
+     "exp":"10.35584545135498 m",
+     "val":10.35584545135498
+    },
+    "y":{
+     "exp":"1.914906 m",
+     "val":1.914906
+    },
+    "heading":{
+     "exp":"0 rad",
+     "val":0.0
+    }
+   },
+   "r_LEFT_STATION":{
+    "x":{
+     "exp":"16.086557388305664 m",
+     "val":16.086557388305664
+    },
+    "y":{
+     "exp":"1.2670011520385742 m",
+     "val":1.2670011520385742
+    },
+    "heading":{
+     "exp":"-0.9080678827061227 rad",
+     "val":-0.9080678827061228
+    }
+   },
+   "r_L_CORAL":{
+    "x":{
+     "exp":"13.897 m",
+     "val":13.897
+    },
+    "y":{
+     "exp":"2.905 m",
+     "val":2.905
+    },
+    "heading":{
+     "exp":"-1.047 rad",
+     "val":-1.047
+    }
+   },
+   "r_MARK_1_TO_A_CORAL":{
+    "x":{
+     "exp":"FIELD_LENGTH - b_MARK_1_TO_A_CORAL.x",
+     "val":16.548249
+    },
+    "y":{
+     "exp":"FIELD_WIDTH - b_MARK_1_TO_A_CORAL.y",
+     "val":2.1517999999999997
+    },
+    "heading":{
+     "exp":"b_MARK_1_TO_A_CORAL.heading + pi rad",
+     "val":6.283185307179586
+    }
+   },
+   "r_MARK_1_TO_A_CORAL_ALIGNMENT":{
+    "x":{
+     "exp":"FIELD_LENGTH - b_MARK_1_TO_A_CORAL_ALIGNMENT.x",
+     "val":15.548248999999998
+    },
+    "y":{
+     "exp":"FIELD_WIDTH - b_MARK_1_TO_A_CORAL_ALIGNMENT.y",
+     "val":2.1517999999999997
+    },
+    "heading":{
+     "exp":"b_MARK_1_TO_A_CORAL_ALIGNMENT.heading + pi rad",
+     "val":6.283185307179586
+    }
+   },
+   "r_MARK_1_TO_K_CORAL_ALIGNMENT":{
+    "x":{
+     "exp":"FIELD_LENGTH - b_MARK_1_TO_L_CORAL_ALIGNMENT.x()",
+     "val":15.998248999999998
+    },
+    "y":{
+     "exp":"FIELD_WIDTH - b_MARK_1_TO_L_CORAL_ALIGNMENT.y()",
+     "val":3.098399864959717
+    },
+    "heading":{
+     "exp":"b_MARK_1_TO_L_CORAL.heading() + pi rad",
+     "val":5.2355926535897925
+    }
+   },
+   "r_MARK_1_TO_L_CORAL":{
+    "x":{
+     "exp":"FIELD_LENGTH - b_MARK_1_TO_L_CORAL.x()",
+     "val":16.598249
+    },
+    "y":{
+     "exp":"FIELD_WIDTH - b_MARK_1_TO_L_CORAL.y()",
+     "val":2.0385143630981446
+    },
+    "heading":{
+     "exp":"b_MARK_1_TO_L_CORAL.heading + pi rad",
+     "val":5.2355926535897925
+    }
+   },
+   "r_MARK_2_TO_A_CORAL":{
+    "x":{
+     "exp":"FIELD_LENGTH - b_MARK_2_TO_A_CORAL.x()",
+     "val":16.598249
+    },
+    "y":{
+     "exp":"FIELD_WIDTH - b_MARK_2_TO_A_CORAL.y()",
+     "val":4.0392267578125
+    },
+    "heading":{
+     "exp":"b_MARK_2_TO_A_CORAL.heading() + pi rad",
+     "val":6.283592653589793
+    }
+   },
+   "r_MARK_2_TO_A_CORAL_ALIGNMENT":{
+    "x":{
+     "exp":"FIELD_LENGTH - b_MARK_2_TO_A_CORAL_ALIGNMENT.x()",
+     "val":15.597174557137
+    },
+    "y":{
+     "exp":"FIELD_WIDTH - b_MARK_2_TO_A_CORAL_ALIGNMENT.y()",
+     "val":4.0392267578125
+    },
+    "heading":{
+     "exp":"b_MARK_2_TO_A_CORAL.heading() + pi rad",
+     "val":6.283592653589793
+    }
+   },
+   "r_MARK_2_TO_C_CORAL":{
+    "x":{
+     "exp":"FIELD_LENGTH - b_MARK_2_TO_C_CORAL.x()",
+     "val":16.515200012611388
+    },
+    "y":{
+     "exp":"FIELD_WIDTH - b_MARK_2_TO_C_CORAL.y()",
+     "val":4.0018
+    },
+    "heading":{
+     "exp":"b_MARK_2_TO_C_CORAL.heading() + pi rad",
+     "val":6.283185307179586
+    }
+   },
+   "r_MARK_2_TO_C_CORAL_ALIGNMENT":{
+    "x":{
+     "exp":"FIELD_LENGTH - b_MARK_2_TO_C_CORAL_ALIGNMENT.x()",
+     "val":15.55375742285156
+    },
+    "y":{
+     "exp":"FIELD_WIDTH - b_MARK_2_TO_C_CORAL_ALIGNMENT.y()",
+     "val":5.058794962692261
+    },
+    "heading":{
+     "exp":"b_MARK_2_TO_C_CORAL_ALIGNMENT.heading() + pi rad",
+     "val":1.0475926535897933
+    }
+   },
+   "r_MARK_2_TO_L_CORAL":{
+    "x":{
+     "exp":"FIELD_LENGTH - b_MARK_2_TO_L_CORAL.x",
+     "val":16.598249
+    },
+    "y":{
+     "exp":"FIELD_WIDTH - b_MARK_2_TO_L_CORAL.y",
+     "val":4.0518
+    },
+    "heading":{
+     "exp":"b_MARK_2_TO_L_CORAL.heading + pi rad",
+     "val":6.283592653589793
+    }
+   },
+   "r_MARK_2_TO_L_CORAL_ALIGNMENT":{
+    "x":{
+     "exp":"FIELD_LENGTH - b_MARK_2_TO_L_CORAL_ALIGNMENT.x",
+     "val":15.24768471090698
+    },
+    "y":{
+     "exp":"FIELD_WIDTH - b_MARK_2_TO_L_CORAL_ALIGNMENT.y",
+     "val":2.9315903060913087
+    },
+    "heading":{
+     "exp":"b_MARK_2_TO_L_CORAL_ALIGNMENT.heading + pi rad",
+     "val":5.2355926535897925
+    }
+   },
+   "r_MARK_3_TO_B_CORAL":{
+    "x":{
+     "exp":"FIELD_LENGTH - b_MARK_3_TO_B_CORAL.x()",
+     "val":16.598249
+    },
+    "y":{
+     "exp":"FIELD_WIDTH - b_MARK_3_TO_B_CORAL.y()",
+     "val":5.9518
+    },
+    "heading":{
+     "exp":"b_MARK_3_TO_B_CORAL.heading() + pi rad",
+     "val":6.283185307179586
+    }
+   },
+   "r_MARK_3_TO_B_CORAL_ALIGNMENT":{
+    "x":{
+     "exp":"FIELD_LENGTH - b_MARK_3_TO_B_CORAL_ALIGNMENT.x()",
+     "val":15.536984199
+    },
+    "y":{
+     "exp":"FIELD_WIDTH - b_MARK_3_TO_B_CORAL_ALIGNMENT.y()",
+     "val":5.9518
+    },
+    "heading":{
+     "exp":"b_MARK_3_TO_B_CORAL.heading() + pi rad",
+     "val":6.283185307179586
+    }
+   },
+   "r_MARK_CORAL_TO_A_CORAL":{
+    "x":{
+     "exp":"FIELD_LENGTH - b_MARK_1_TO_A_CORAL.x",
+     "val":16.548249
+    },
+    "y":{
+     "exp":"FIELD_WIDTH - b_MARK_1_TO_A_CORAL.y",
+     "val":2.1517999999999997
+    },
+    "heading":{
+     "exp":"b_MARK_1_TO_A_CORAL.heading + pi rad",
+     "val":6.283185307179586
+    }
+   },
+   "r_MIDDLE_STARTING":{
+    "x":{
+     "exp":"10.00561809539795 m",
+     "val":10.00561809539795
+    },
+    "y":{
+     "exp":"4.237977981567383 m",
+     "val":4.237977981567383
+    },
+    "heading":{
+     "exp":"pi rad",
+     "val":3.141592653589793
+    }
+   },
+   "r_RIGHT_STARTING":{
+    "x":{
+     "exp":"10.382755279541016 m",
+     "val":10.382755279541016
+    },
+    "y":{
+     "exp":"b_LEFT_STARTING.y()",
+     "val":6.137656
+    },
+    "heading":{
+     "exp":"0 rad",
+     "val":0.0
+    }
+   },
+   "r_RIGHT_STATION":{
+    "x":{
+     "exp":"15.950496673583984 m",
+     "val":15.950496673583984
+    },
+    "y":{
+     "exp":"7.015332221984863 m",
+     "val":7.015332221984863
+    },
+    "heading":{
+     "exp":"0.9080678827061227 rad",
+     "val":0.9080678827061228
+    }
+   }
+  }
+ },
+ "config":{
+  "frontLeft":{
+   "x":{
+    "exp":"0.289 m",
+    "val":0.289
+   },
+   "y":{
+    "exp":"0.264 m",
+    "val":0.264
+   }
+  },
+  "backLeft":{
+   "x":{
+    "exp":"-0.289 m",
+    "val":-0.289
+   },
+   "y":{
+    "exp":"0.264 m",
+    "val":0.264
+   }
+  },
+  "mass":{
+   "exp":"142 lbs",
+   "val":64.41011654
+  },
+  "inertia":{
+   "exp":"6 kg m ^ 2",
+   "val":6.0
+  },
+  "gearing":{
+   "exp":"6.75",
+   "val":6.75
+  },
+  "radius":{
+   "exp":"0.050165 m",
+   "val":0.050165
+  },
+  "vmax":{
+   "exp":"5800 * 0.8 RPM",
+   "val":485.8996637552213
+  },
+  "tmax":{
+   "exp":"1 N * m",
+   "val":1.0
+  },
+  "cof":{
+   "exp":"1",
+   "val":1.0
+  },
+  "bumper":{
+   "front":{
+    "exp":"0.425 m",
+    "val":0.425
+   },
+   "side":{
+    "exp":"0.4 m",
+    "val":0.4
+   },
+   "back":{
+    "exp":"0.425 m",
+    "val":0.425
+   }
+  },
+  "differentialTrackWidth":{
+   "exp":"22 in",
+   "val":0.5588
+  }
+ },
+ "generationFeatures":[]
+}
