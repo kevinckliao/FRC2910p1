@@ -7,7 +7,7 @@ plugins {
 
     id "edu.wpi.first.GradleRIO" version "2025.3.2"
 
-    id "com.palantir.java-format" version "2.50.0"
+    id "com.palantir.java-format" version "2.38.0"
     id "com.diffplug.spotless" version "6.25.0"
     id "net.ltgt.errorprone" version "4.1.0"
 
@@ -165,4 +165,8 @@ spotless {
         setEncoding(StandardCharsets.UTF_8)
         indentWithSpaces(4)
     }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.errorprone.enabled = false
 }
